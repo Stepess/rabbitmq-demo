@@ -17,7 +17,7 @@ public class RejectProducerRunner {
                 false,
                 null);
 
-        producer.produce(100, null);
+        producer.produce(100, null, 1000L);
     }
 
 }

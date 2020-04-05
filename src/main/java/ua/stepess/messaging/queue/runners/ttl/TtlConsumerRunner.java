@@ -10,6 +10,7 @@ import static ua.stepess.messaging.NetworkConstants.PORT;
 import static ua.stepess.messaging.queue.Constants.ACK_QUEUE;
 import static ua.stepess.messaging.queue.Constants.TTL_QUEUE;
 
+// power off and messages will be removed
 public class TtlConsumerRunner {
 
     public static void main(String[] args) throws IOException {

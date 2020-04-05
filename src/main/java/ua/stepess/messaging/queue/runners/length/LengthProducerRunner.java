@@ -23,7 +23,7 @@ public class LengthProducerRunner {
                 false,
                 queueConfig);
 
-        producer.produce(100, null);
+        producer.produce(100, null, 10L);
     }
 
 }

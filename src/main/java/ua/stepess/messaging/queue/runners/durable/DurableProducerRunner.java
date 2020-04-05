@@ -18,7 +18,7 @@ public class DurableProducerRunner {
                 true,
                 null);
 
-        producer.produce(100, MessageProperties.PERSISTENT_TEXT_PLAIN);
+        producer.produce(1000, MessageProperties.PERSISTENT_TEXT_PLAIN, 10L);
     }
 
 }

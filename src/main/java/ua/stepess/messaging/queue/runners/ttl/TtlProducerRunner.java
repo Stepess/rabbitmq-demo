@@ -21,10 +21,10 @@ public class TtlProducerRunner {
 
         AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder()
                 .contentType("text/plain")
-                .expiration("100") // work only for one message at top of queue
+                .expiration("10") // work only for one message at top of queue
                 .build();
 
-        producer.produce(100, properties);
+        producer.produce(100, properties, 10L);
     }
 
 }

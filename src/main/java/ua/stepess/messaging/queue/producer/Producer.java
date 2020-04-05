@@ -27,7 +27,7 @@ public class Producer {
         this.queueArgs = queueArgs;
     }
 
-    public void produce(int numberOfMessages, AMQP.BasicProperties properties) {
+    public void produce(int numberOfMessages, AMQP.BasicProperties properties, Long latency) {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connectionFactory.setHost(host);
         connectionFactory.setPort(hostPort);
@@ -40,7 +40,7 @@ public class Producer {
                 String message = "Message#" + i;
                 channel.basicPublish("", queueName, properties, message.getBytes());
                 System.out.println("Sent '" + message + "'");
-                sleep(10);
+                sleep(latency);
             }
         } catch (TimeoutException | IOException e) {
             e.printStackTrace();

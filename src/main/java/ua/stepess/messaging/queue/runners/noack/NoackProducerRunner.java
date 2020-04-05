@@ -17,7 +17,7 @@ public class NoackProducerRunner {
                 false,
                 null);
 
-        producer.produce(100, null);
+        producer.produce(10, null, 500L);
     }
 
 }

@@ -9,7 +9,7 @@ import static ua.stepess.messaging.NetworkConstants.HOST;
 import static ua.stepess.messaging.NetworkConstants.PORT;
 import static ua.stepess.messaging.queue.Constants.DURABLE_QUEUE;
 
-public class ConsumerRunner {
+public class DurableConsumerRunner {
 
     public static void main(String[] args) throws IOException {
         AbstractConsumer consumer = new ManualAckConsolePrinterConsumer(HOST,

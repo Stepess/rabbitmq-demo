@@ -10,7 +10,7 @@ import static ua.stepess.messaging.NetworkConstants.PORT;
 import static ua.stepess.messaging.queue.Constants.ACK_QUEUE;
 import static ua.stepess.messaging.queue.Constants.TTL_QUEUE;
 
-public class ProducerRunner {
+public class TtlProducerRunner {
 
     public static void main(String[] args) throws IOException {
         Producer producer = new Producer(HOST,

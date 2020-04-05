@@ -10,8 +10,13 @@ import static ua.stepess.messaging.Utils.sleep;
 
 public class ManualAckConsolePrinterConsumer extends AbstractConsumer{
 
-    public ManualAckConsolePrinterConsumer(String host, Integer hostPort, String queueName, Boolean durable, Map<String, Object> queueArgs) {
-        super(host, hostPort, queueName, false, durable, queueArgs);
+    public ManualAckConsolePrinterConsumer(String host,
+                                           Integer hostPort,
+                                           String queueName,
+                                           Boolean durable,
+                                           Map<String, Object> queueArgs,
+                                           Long latency) {
+        super(host, hostPort, queueName, false, durable, queueArgs, latency);
     }
 
     @Override
@@ -20,7 +25,7 @@ public class ManualAckConsolePrinterConsumer extends AbstractConsumer{
         String message = new String(rawMessage.getBody(), StandardCharsets.UTF_8);
         System.out.println("Received '" + message + "'");
         try {
-            sleep(1000);
+            sleep(latency);
         }
         finally {
             System.out.println("Done");

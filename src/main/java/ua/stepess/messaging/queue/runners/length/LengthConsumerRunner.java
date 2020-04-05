@@ -21,7 +21,8 @@ public class LengthConsumerRunner {
                 PORT,
                 LENGTH_LIMIT_QUEUE,
                 false,
-                queueConfig);
+                queueConfig,
+                1000L);
 
         consumer.start();
     }

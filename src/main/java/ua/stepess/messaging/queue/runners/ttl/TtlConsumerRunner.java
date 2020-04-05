@@ -17,7 +17,8 @@ public class TtlConsumerRunner {
                 PORT,
                 TTL_QUEUE,
                 false,
-                null);
+                null,
+                1000L);
 
         consumer.start();
     }

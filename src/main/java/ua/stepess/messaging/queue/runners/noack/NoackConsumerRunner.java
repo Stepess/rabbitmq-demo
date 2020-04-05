@@ -16,7 +16,8 @@ public class NoackConsumerRunner {
                 PORT,
                 NO_ACK_QUEUE,
                 false,
-                null);
+                null,
+                1000L);
 
         consumer.start();
     }

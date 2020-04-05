@@ -16,7 +16,8 @@ public class DurableConsumerRunner {
                 PORT,
                 DURABLE_QUEUE,
                 true,
-                null);
+                null,
+                1000L);
 
         consumer.start();
     }

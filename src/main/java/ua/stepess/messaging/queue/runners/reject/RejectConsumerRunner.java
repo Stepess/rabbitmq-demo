@@ -16,8 +16,8 @@ public class RejectConsumerRunner {
                 PORT,
                 REJECT_QUEUE,
                 false,
-                false,
-                null);
+                null,
+                2000L);
 
         /*AbstractConsumer consumer = new ManualAckConsolePrinterConsumer(HOST,
                 PORT,

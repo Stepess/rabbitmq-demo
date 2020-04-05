@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
-import static ua.stepess.messaging.queue.Constants.QUEUE_NAME;
-
 public abstract class AbstractConsumer {
 
     private String host;
@@ -19,15 +17,24 @@ public abstract class AbstractConsumer {
     private Boolean autoAck;
     private Boolean durable;
     private Map<String, Object> queueArgs;
+
+    protected Long latency;
     protected Channel channel;
 
-    public AbstractConsumer(String host, Integer hostPort, String queueName, Boolean autoAck, Boolean durable, Map<String, Object> queueArgs) {
+    public AbstractConsumer(String host,
+                            Integer hostPort,
+                            String queueName,
+                            Boolean autoAck,
+                            Boolean durable,
+                            Map<String, Object> queueArgs,
+                            Long latency) {
         this.host = host;
         this.hostPort = hostPort;
         this.queueName = queueName;
         this.autoAck = autoAck;
         this.durable = durable;
         this.queueArgs = queueArgs;
+        this.latency = latency;
     }
 
     public void start() throws IOException {

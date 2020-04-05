@@ -10,15 +10,20 @@ import static ua.stepess.messaging.Utils.sleep;
 
 public class AutoAckConsolePrinterConsumer extends AbstractConsumer {
 
-    public AutoAckConsolePrinterConsumer(String host, Integer hostPort, String queueName, Boolean durable, Map<String, Object> queueArgs) {
-        super(host, hostPort, queueName, true, durable, queueArgs);
+    public AutoAckConsolePrinterConsumer(String host,
+                                         Integer hostPort,
+                                         String queueName,
+                                         Boolean durable,
+                                         Map<String, Object> queueArgs,
+                                         Long latency) {
+        super(host, hostPort, queueName, true, durable, queueArgs, latency);
     }
 
     @Override
     protected void handleMessage(String consumerTag, Delivery delivery) throws IOException {
         String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
         System.out.println("Received '" + message + "'");
-        sleep(3000);
+        sleep(latency);
         System.out.println("Done");
     }
 }

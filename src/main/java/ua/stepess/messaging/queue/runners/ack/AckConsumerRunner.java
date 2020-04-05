@@ -16,7 +16,8 @@ public class AckConsumerRunner {
                 PORT,
                 ACK_QUEUE,
                 false,
-                null);
+                null,
+                5000L);
 
         consumer.start();
     }
